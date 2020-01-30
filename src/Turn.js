@@ -1,11 +1,11 @@
 class Turn {
-  constructor(playerGuess, card) {
-    this.playerGuess = playerGuess;
+  constructor(guess, card) {
+    this.guess = guess;
     this.card = card;
   }
 
   returnGuess() {
-    return this.playerGuess;
+    return this.guess;
   }
 
   returnCard() {
@@ -13,7 +13,7 @@ class Turn {
   }
 
   evaluateGuess() {
-    if (this.playerGuess.toLowerCase() == this.card.correctAnswer.toLowerCase()) {
+    if (this.guess === this.card.correctAnswer) {
       return true;
     } else {
       return false;
@@ -21,12 +21,11 @@ class Turn {
   }
 
   giveFeedback() {
-    if (this.evaluateGuess() == true) {
-      return 'Boo-Yah! Yahtzee! Eureka!';
+    if (this.evaluateGuess() === true) {
+      return '🤩 CORREECT! Boo-Yah! Yahtzee! Eureka!';
     } else {
-      return 'No Dice! Try Again!';
+      return '😞 INCORRECT! No Dice! Try Again!';
     }
   }
-
 }
 module.exports = Turn;
