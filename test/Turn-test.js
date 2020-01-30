@@ -18,7 +18,7 @@ describe('Turn', function () {
   it('should accept two arguments when instantiating Turn', function () {
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('function', card);
-    expect(turn.playerGuess).to.equal('function');
+    expect(turn.guess).to.equal('function');
     expect(turn.card).to.equal(card);
   });
 
@@ -44,7 +44,7 @@ describe('Turn', function () {
     const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
     const turn = new Turn('function', card);
     expect(turn.evaluateGuess()).to.equal(false);
-    expect(turn.giveFeedback()).to.equal('No Dice! Try Again!');
+    expect(turn.giveFeedback()).to.equal('😞 INCORRECT! No Dice! Try Again!');
   });
 
 });

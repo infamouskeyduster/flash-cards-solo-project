@@ -23,6 +23,7 @@ class Game {
     const round = new Round(deck);
     this.printMessage(deck);
     this.printQuestion(round);
+    this.currentRound = round;
   }
 }
 
